@@ -1,0 +1,70 @@
+{% extends "cms/base.html" %}
+
+{% block script %}
+<script src="{% static 'js/home.js' %}"></script>
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">商品增加界面</h1>
+{#        <p class="lead">订单录入界面.</p>#}
+      </div>
+    </div>
+
+{#    卡片#}
+
+    <div class="card" style="width: 25rem;">
+        <form action="#" class="formTables">
+            <div style="margin-left:20px;color:silver">主图：</div>
+            <img class="card-img-top card-img-main imagedown0" data-url="" src="http://127.0.0.1:8000/media/img/bg.jpg"  alt="...">
+                <input type="file" class="file0 hideInput" >
+              <div class="card-body">
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">name</span></div>
+                    <input name="name" class="form-control" type="text" placeholder="商品名称">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">price</span></div>
+                    <input name="price" class="form-control" type="text" placeholder="价格">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">shop</span></div>
+                    <input name="shopName" class="form-control" type="text" placeholder="店名">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">fare</span></div>
+                    <input name="fare" class="form-control" type="text" placeholder="运费">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">standars</span></div>
+                    <input name="standars" class="form-control" type="text" placeholder="商口规格">
+                </div>
+                <span style="color:silver;font-size:12px;"><br/>商铺小头像：</span>
+                <img class="shoplogo imagedown5" data-url="" src="http://127.0.0.1:8000/media/img/bg.jpg" alt="...">
+                  <input type="file" class="file5 hideInput">
+              </div>
+            <span style="margin-left:20px;color:silver">4张轮播图：</span>
+            <div class="card-img-top card-img-top1">
+
+                <img class="imagedown imagedown1" data-url="" src="http://127.0.0.1:8000/media/img/bg_person.png" alt="...">
+                <img class="imagedown imagedown2" data-url="" src="http://127.0.0.1:8000/media/img/bg_person.png" alt="...">
+                <img class="imagedown imagedown3" data-url="" src="http://127.0.0.1:8000/media/img/bg_person.png" alt="...">
+                <img class="imagedown imagedown4" data-url="" src="http://127.0.0.1:8000/media/img/bg_person.png" alt="...">
+                <input type="file" class="file1 hideInput">
+                <input type="file" class="file2 hideInput">
+                <input type="file" class="file3 hideInput">
+                <input type="file" class="file4 hideInput">
+            </div>
+            <a href="#" type="submit" class="btn btn-primary" id="submitBTN" style="margin:15px;">提交</a>
+        </form>
+    </div>
+
+{#http://127.0.0.1:8000/media/img/bg.jpg#}
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+.card{
+    margin:auto;
+    background-color:#eeeeee;
+}
+.card .card-img-top1{
+    padding-left:25px;
+}
+.card .card-img-main {
+    margin-left:150px;
+
+    width:100px;
+    height:100px;
+}
+.card .card-img-top1 .imagedown{
+    width:100px;
+    height:100px;
+}
+
+.shoplogo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.card input{
+    border:0;
+}
+.fontcss{
+    color:red;
+}
+.hideInput{
+    display:none;
+}
+.input-group{
+    margin-top:10px;
+}

@@ -1,0 +1,83 @@
+
+.wrapper{
+
+}
+.card{
+    position:relative;
+    background-color:#eeeeee;
+    float:left;
+    margin-bottom: 30px;
+    margin-right:30px;
+}
+.card .card-img-top1{
+    padding-left:25px;
+}
+.card .card-img-main {
+    margin-left:150px;
+    width:100px;
+    height:100px;
+}
+.card .card-img-top1 .imagedown{
+    width:100px;
+    height:100px;
+    margin:20px;
+}
+
+.shoplogo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.card input{
+    border:0;
+}
+.fontcss{
+    color:red;
+}
+.hideInput{
+    display:none;
+}
+.input-group{
+    margin-top:10px;
+}
+.closeBTN{
+    float:right;
+    position:absolute;
+    margin:5px;
+    right:0;
+    top:0;
+}
+.input-group-text{
+    border:1px solid slategray;
+    border-right:1px solid slategray;
+}
+.input-group-prepend{
+    border-right:1px solid slategray;
+}
+
+.btn-edit{
+    margin:10px;
+    position:absolute;
+}
+
+.shell{
+    z-index:1;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(255,255,255,0.7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+}
+
+.closeBTN1{
+    float:right;
+    position:absolute;
+    margin:5px;
+    right:0;
+    top:0;
+}

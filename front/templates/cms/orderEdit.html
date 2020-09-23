@@ -1,0 +1,67 @@
+{% extends 'cms/base.html' %}
+
+{% block script %}
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<script src="{% static 'js/orderedit.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">订单编辑</h1>
+{#        <p class="lead">订单录入界面.</p>#}
+      </div>
+    </div>
+
+{#    卡片#}
+    {% for ord in order %}
+    <div class="card" style="width: 25rem;">
+        <form action="#" class="formTables">
+            <div style="margin-left:20px;color:silver">主图：</div>
+            <img class="card-img-top card-img-main imagedown0" data-url="" src="{{ ord.pic }}"  alt="...">
+                <input type="file" class="file0 hideInput" >
+              <div class="card-body">
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">商品名称</span></div>
+                    <input name="shop" class="form-control" type="text" placeholder="商品名称" value="{{ ord.shop }}">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">运费</span></div>
+                    <input name="fare" class="form-control" type="text" placeholder="运费" value="{{ ord.fare }}">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">订购数量</span></div>
+                    <input name="num" class="form-control" type="text" placeholder="订购数量" value="{{ ord.num }}">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">商品规格</span></div>
+                    <input name="standarsname" class="form-control" type="text" placeholder="商品规格" value="{{ ord.standarsname }}">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">订单状态</label>
+                  </div>
+                  <select name="status" class="custom-select" id="inputGroupSelect01">
+                    {% if ord.status == True %}
+                    <option selected value="1">订单状态有效</option>
+                    <option value="0">订单状态无效</option>
+
+                      {% else %}
+                    <option selected value="0">订单状态无效</option>
+                    <option value="1">订单状态有效</option>
+                      {% endif %}
+
+
+                  </select>
+                </div>
+              </div>
+            <a href="#" type="submit" class="btn btn-primary" data-order-id="{{ ord.orderid }}" id="submitBTN-order-edit" style="margin:15px;">提交</a>
+        </form>
+    </div>
+    {% endfor %}
+{#http://127.0.0.1:8000/media/img/bg.jpg#}
+
+
+
+{% endblock %}
