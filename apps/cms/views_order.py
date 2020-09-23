@@ -66,27 +66,35 @@ def order_filter(request):
   return render(request,"cms/order_list.html",{"orders":order_data})
 
 def update_order(request):
-  # orderid = request.POST.get("orderid")
-  # pic = request.POST.get("pic")
-  # shop = request.POST.get("shop")
-  # print("orderid:",orderid)
-  # fare = request.POST.get("fare")
-  # num = request.POST.get("num")
-  # standarsname = request.POST.get("standarsname")
-  # status = request.POST.get("status")
+  if request.method == "POST":
+    orderid = request.POST.get("orderid")
+    pic = request.POST.get("pic")
+    shop = request.POST.get("shop")
+    goodid = request.POST.get("goodid")
+    goodname = request.POST.get("goodname")
+    fare = request.POST.get("fare")
+    num = request.POST.get("num")
+    standarsname = request.POST.get("standarsname")
+    status = request.POST.get("status")
+    models.orders.objects.create(pic=pic, shop=shop, fare=fare, num=num, goodid=goodid, goodname=goodname,orderid=orderid,
+                                 standarsname=standarsname, status=status)
+    return restful.ok()
 
-  orderid = request.GET.get("orderid")
-  print("orderid: ", orderid)
-  pic = request.GET.get("pic")
-  print("pic: ", pic)
-  shop = request.GET.get("shop")
-  print("shop: ", shop)
-  fare = int(request.GET.get("fare"))
-  print("fare: ", fare)
-  num = int(request.GET.get("num"))
-  print("num: ", num)
-  standarsname = request.GET.get("standarsname")
-  status = request.GET.get("status")
-  models.orders.objects.create(pic=pic,shop=shop,fare=fare,num=num,
-                                                       standarsname=standarsname,status=status)
-  return restful.ok()
+  else:
+
+    orderid = request.GET.get("orderid")
+    goodid = request.GET.get("goodid")
+    goodname = request.GET.get("goodname")
+    pic = request.GET.get("pic")
+
+    shop = request.GET.get("shop")
+
+    fare = int(request.GET.get("fare"))
+
+    num = int(request.GET.get("num"))
+
+    standarsname = request.GET.get("standarsname")
+    status = request.GET.get("status")
+    models.orders.objects.create(pic=pic,shop=shop,fare=fare,num=num,goodid=goodid,goodname=goodname,orderid=orderid,
+                                                         standarsname=standarsname,status=status)
+    return restful.ok()
