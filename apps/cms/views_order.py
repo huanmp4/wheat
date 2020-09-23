@@ -16,9 +16,8 @@ def orderview(request):
 
 
 def orderedit(request):
-  order_id = request.GET.get("order_id")
-  print("orderedit:", order_id)
-  orders = models.orders.objects.filter(orderid=order_id)
+  id = request.GET.get("id")
+  orders = models.orders.objects.filter(id=id)
 
   return  render(request,"cms/orderEdit.html",{"order":orders})
 
@@ -31,14 +30,14 @@ def orderupdate(request):
   num = request.POST.get("num")
   standarsname = request.POST.get("standarsname")
   status = request.POST.get("status")
-  models.orders.objects.filter(orderid=orderid).update(pic=pic,shop=shop,fare=fare,num=num,
+  models.orders.objects.filter(id=orderid).update(pic=pic,shop=shop,fare=fare,num=num,
                                                        standarsname=standarsname,status=status)
   return restful.ok()
 
 
 def orderdelete(request):
-  id = request.GET.get('orderid')
-  models.orders.objects.filter(orderid=id).delete()
+  id = request.GET.get('id')
+  models.orders.objects.filter(id=id).delete()
   return HttpResponseRedirect(reverse("cms:orderview"))
 
 
