@@ -5,6 +5,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 import datetime,time
+
+
 def orderview(request):
   orders = models.orders.objects.all()
   content = {
@@ -63,14 +65,28 @@ def order_filter(request):
 
   return render(request,"cms/order_list.html",{"orders":order_data})
 
-def add_order(request):
-  orderid = request.POST.get("orderid")
-  pic = request.POST.get("pic")
-  shop = request.POST.get("shop")
-  fare = request.POST.get("fare")
-  num = request.POST.get("num")
-  standarsname = request.POST.get("standarsname")
-  status = request.POST.get("status")
-  models.orders.objects.create(orderid=orderid).update(pic=pic,shop=shop,fare=fare,num=num,
+def update_order(request):
+  # orderid = request.POST.get("orderid")
+  # pic = request.POST.get("pic")
+  # shop = request.POST.get("shop")
+  # print("orderid:",orderid)
+  # fare = request.POST.get("fare")
+  # num = request.POST.get("num")
+  # standarsname = request.POST.get("standarsname")
+  # status = request.POST.get("status")
+
+  orderid = request.GET.get("orderid")
+  print("orderid: ", orderid)
+  pic = request.GET.get("pic")
+  print("pic: ", pic)
+  shop = request.GET.get("shop")
+  print("shop: ", shop)
+  fare = int(request.GET.get("fare"))
+  print("fare: ", fare)
+  num = int(request.GET.get("num"))
+  print("num: ", num)
+  standarsname = request.GET.get("standarsname")
+  status = request.GET.get("status")
+  models.orders.objects.create(pic=pic,shop=shop,fare=fare,num=num,
                                                        standarsname=standarsname,status=status)
   return restful.ok()

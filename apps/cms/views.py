@@ -182,3 +182,8 @@ def update(request):
     return restful.ok()
 
 
+def get_goods(request):
+  goods = models.Goods.objects.all()
+  goods = serializers.GoodsSerializer(goods,many=True).data
+  content = {"goods":goods}
+  return restful.result(code=200,data=content)

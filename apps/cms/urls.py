@@ -23,6 +23,7 @@ urlpatterns = [
     path("edit",views.edit,name="edit"),
     path("update",views.update,name="update"),
     path("shopadd",views.shopadd,name="shopadd"),
+    path("get_goods",views.get_goods,name="get_goods"),
 ]
 
 
@@ -32,7 +33,7 @@ urlpatterns += [
     path("orderupdate",views_order.orderupdate,name="orderupdate"),
     path("orderdelete",views_order.orderdelete,name="orderdelete"),
     path("order_filter",views_order.order_filter,name="order_filter"),
-    path("add_order",views_order.add_order,name="add_order"),
+    path("update_order",views_order.update_order,name="update_order"),
 ]
 
 urlpatterns += [
