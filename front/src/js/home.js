@@ -125,7 +125,8 @@ Home.prototype.submitFormEvent = function(){
             },
             "success":function(e){
                 if(e.code === 200){
-                    console.log("成功添加")
+                    xfzalert.alertSuccess("商品已添加成功");
+                    console.log("商品已添加成功,保留缓存数据")
                 }
             }
         })
