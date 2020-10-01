@@ -2,135 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0bb56f9-b674-4d8c-97a0-793e17e7c8cf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/js/goods_update.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/solid/bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/solid/bg_person.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test2.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/wheat.iml" afterPath="$PROJECT_DIR$/.idea/wheat.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/uwsgi.ini" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/templatetags/lists.py" afterPath="$PROJECT_DIR$/apps/cms/templatetags/lists.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/templatetags/news_filters.py" afterPath="$PROJECT_DIR$/apps/cms/templatetags/news_filters.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" afterPath="$PROJECT_DIR$/apps/cms/urls.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" afterPath="$PROJECT_DIR$/apps/cms/views.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views_order.py" afterPath="$PROJECT_DIR$/apps/cms/views_order.py" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/view.css" afterPath="$PROJECT_DIR$/front/src/css/view.css" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/view.js" afterPath="$PROJECT_DIR$/front/src/js/view.js" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/base1.html" afterPath="$PROJECT_DIR$/front/templates/cms/base1.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/goods_edit.html" afterPath="$PROJECT_DIR$/front/templates/cms/goods_edit.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/goods_list.html" afterPath="$PROJECT_DIR$/front/templates/cms/goods_list.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/home.html" afterPath="$PROJECT_DIR$/front/templates/cms/goods_add.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/orderEdit.html" afterPath="$PROJECT_DIR$/front/templates/cms/orderEdit.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/order_list.html" afterPath="$PROJECT_DIR$/front/templates/cms/order_list.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/view.html" afterPath="$PROJECT_DIR$/front/templates/cms/view.html" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803388.png.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803388.png_iDGLf1u.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803388.png_u0g12Fd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803503.png.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803503.png_CoGx1JC.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803503.png_lV05NLF.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803503.png_xeSEUph.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803503.png_zhgsPDj.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548_EsG0qSX.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548_FN6A2rb.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548_ewIWTIx.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548_haHeAcl.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600803548_v0KlCk5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600805381.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600805417.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600833722.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600833983.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600833991.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844086.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844097.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844128.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844128_QzwJxGY.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844157.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844166.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844498.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844502.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844506.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844969.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844983.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844983_3pLcvJL.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600844983_Mqebuxk.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600845118.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600845121.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600845125.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/1600851529.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/3_oh6KJjV.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_Eoe99Gq.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_IoOyNCA.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_JxPTg59.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_ME7EI9o.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_Y08BuCc.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_Z4dDzKn.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_iA8E9Av.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/4_iTtUR17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/banner.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/banner_5lziJAl.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/banner_PSOe9ah.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/banner_qChWGJc.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg.jpg" afterPath="$PROJECT_DIR$/media/solid/bg.jpg" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_1AND0hl.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_1zX6flk.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_48x1MNa.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_6wZucwp.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_6yxg0Fa.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_7T07M0j.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_BTwCZtZ.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_HzZcYd8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_IApUwTH.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_J7sPVE5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_UQVCxwt.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_VSMZ21i.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_gBmkqTo.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_hCDP1MV.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_k9YsYf5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_nbFxD2N.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_nhyaVtL.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person.png" afterPath="$PROJECT_DIR$/media/solid/bg_person.png" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_26UIQ67.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_4nOrbUy.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_A4RsuWw.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_Bcl5u1s.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_EK2sN9Y.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_FL87uuF.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_FLeljSF.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_FPz32Ib.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_IGyQsQa.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_IQCK9gd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_Mj0VTjq.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_NJ7yZwG.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_QnP97mr.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_SZYXact.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_Sf46egg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_Ymmc48t.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_bw5NB9v.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_fCCqe8L.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_g5lCmpI.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_iIsbhwx.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_jl1L6Fw.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_lw5285p.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_qso5MfC.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_person_rUkPOuS.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_qlElecP.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_to3UmPc.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/bg_xqGWbMv.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/che.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/denglu.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/qicheqianlian-.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/xiaofangzi.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/微信图片_20200405152752.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/微信图片_20200405152752_7Fgj3d1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/微信图片_20200405152752_EBetfQL.jpg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -171,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uwsgi.ini" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -238,16 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
               <caret line="111" column="35" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/cms/view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="905">
-              <caret line="70" column="36" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -348,6 +221,7 @@
         <option value="$PROJECT_DIR$/front/src/js/view.js" />
         <option value="$PROJECT_DIR$/apps/cms/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/uwsgi.ini" />
       </list>
     </option>
   </component>
@@ -632,13 +506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/cms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
@@ -1016,6 +883,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
