@@ -60,6 +60,16 @@
     position:absolute;
 }
 
+.btn-edit-confirm{
+    margin:10px;
+    position:absolute;
+}
+
+.btn-secondary{
+    margin:10px;
+    position:absolute;
+}
+
 .shell{
     z-index:1;
     position:fixed;

@@ -1,9 +1,10 @@
 {% extends "cms/base.html" %}
 {% load lists %}
 
+
 {% block script %}
     <link rel="stylesheet" href="{% static 'css/view.css' %}">
-    <script src="{% static 'js/view.js' %}"></script>
+    <script src="{% static 'js/goods_update.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
@@ -18,14 +19,12 @@
 <div class="shell" style="visibility:visible">
     <div class="wrapper wrapper2">
         <div class="card" style="width: 400px;" >
-            <button style="width:60px;float:right;" data-goodid="{{ good.id }}"  class="btn btn-secondary btn-edit btn-edit-confirm">确定修改</button>
+            <button style="width:60px;float:right;" data-goodid="{{ good.id }}"  class="btn btn-secondary  btn-edit-confirm">确定修改</button>
             <div data-goodid="{{ good.id }}" class="closeBTN1"><a href="javascript:void(0)"><svg t="1600740127845" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3987" width="32" height="32"><path d="M559.778678 511.789199 948.587961 123.008568c13.379729-13.419637 13.379729-35.276435 0-48.696072-13.449313-13.409404-35.30611-13.409404-48.685839 0L511.080559 463.10336 122.301975 74.312496c-13.409404-13.409404-35.267225-13.409404-48.685839 0-13.409404 13.419637-13.409404 35.276435 0 48.696072L462.396767 511.789199 73.616136 900.609739c-13.409404 13.378705-13.409404 35.236526 0 48.685839 6.764054 6.724145 15.570627 10.013051 24.3772 10.013051 8.807596 0 17.624403-3.357468 24.378224-10.013051l388.780631-388.82054 388.749932 388.82054c6.794753 6.724145 15.601326 10.013051 24.408923 10.013051 8.815783 0 17.624403-3.357468 24.417109-10.013051 13.377682-13.450337 13.377682-35.307134 0-48.685839L559.906591 511.789199 559.778678 511.789199z" p-id="3988" fill="#ffffff"></path></svg>
             </a></div>
             <form action="#" class="formTables">
                 <div style="margin-left:80px;color:silver">主图：</div>
-                <img class="card-img-top card-img-main imagedown0" data-url="{{ good.detail }}" src="{{ good.detail }}"  alt="...">
-
-                    <input type="file" class="file0 hideInput" >
+                <img class="card-img-top card-img-main imagedown0" data-url="{{ good.detail }}" src="{{ good.detail|extra }}"  alt="...">
                   <div class="card-body">
                     <div class="input-group">
                         <div  class="input-group-prepend"><span class="input-group-text" id="basic-addon1">name</span></div>
@@ -49,11 +48,10 @@
                     </div>
                     <span style="color:silver;font-size:12px;"><br/>商铺小头像：</span>
                     <img class="shoplogo imagedown5" data-url="" src="{{ good.shoplogo }}" alt="...">
-                      <input type="file" class="file5 hideInput">
                   </div>
                 <span style="margin-left:20px;color:silver">4张轮播图：</span>
                 <div class="card-img-top card-img-top1">
-                    {% for pic in good.toppicture|lists %}
+                    {% for pic in good.toppicture %}
                         <img class="imagedown imagedown{{ forloop.counter }}" data-url="" src="{{ pic }}" alt="...">
                     {% endfor %}
                     <input type="file" class="file0 hideInput" >

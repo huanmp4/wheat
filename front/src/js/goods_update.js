@@ -1,4 +1,4 @@
-function View(){
+function _Goods(){
     this.closeBTN = $(".closeBTN");
     this.closeBTN1 = $(".closeBTN1");
 
@@ -18,7 +18,7 @@ function View(){
 
 
 
-View.prototype.uploadImages = function(){
+_Goods.prototype.uploadImages = function(){
     var self = this;
     self.imagedown0.click(function(e){
         e.preventDefault();
@@ -48,7 +48,7 @@ View.prototype.uploadImages = function(){
 };
 
 
-View.prototype.func = function(e){
+_Goods.prototype.func = function(e){
     var file = e["1"];
     var img = e["2"];
     console.log("e:",e);
@@ -78,7 +78,7 @@ View.prototype.func = function(e){
 
 
 
-View.prototype.onClickEvent = function(){
+_Goods.prototype.onClickEvent = function(){
     var self = this;
     self.closeBTN.click(function(){
         console.log("关闭按钮");
@@ -101,7 +101,7 @@ View.prototype.onClickEvent = function(){
     })
 };
 
-View.prototype.closeEventBTN = function(){
+_Goods.prototype.closeEventBTN = function(){
     var self = this;
     self.closeBTN1.click(function(){
         $(".shell").css("visibility","hidden");
@@ -109,7 +109,7 @@ View.prototype.closeEventBTN = function(){
 };
 
 
-View.prototype.edit = function(){
+_Goods.prototype.edit = function(){
     var edit = $(".btn-edit");
     edit.click(function(e){
         e.preventDefault();
@@ -133,10 +133,8 @@ View.prototype.edit = function(){
                     shell.find('input[name="name"]').val(data.name);
                     shell.find('input[name="price"]').val(data.price);
                     shell.find('input[name="fare"]').val(data.fare);
-                    shell.find('input[name="shopName"]').val(data.shop);
-
+                    shell.find('input[name="shop"]').val(data.shop);
                     shell.find('input[name="standars"]').val(data.standars);
-                    console.log("standars:",data.standars);
                     shell.find(".closeBTN1").attr("data-goodid",data.id)
                 }
             }
@@ -145,7 +143,7 @@ View.prototype.edit = function(){
 };
 
 
-View.prototype.submitEditer = function(){
+_Goods.prototype.submitEditer = function(){
     var self = this;
     var submit_edit = $(".btn-edit-confirm");
     submit_edit.click(function(){
@@ -193,7 +191,7 @@ View.prototype.submitEditer = function(){
             "success":function(e){
                 if (e.code ===200){
                     console.log("ok");
-
+                    window.location.reload();
                     xfzalert.alertSuccess("修改成功")
                 }
 
@@ -202,7 +200,7 @@ View.prototype.submitEditer = function(){
     })
 };
 
-View.prototype.Run = function(){
+_Goods.prototype.Run = function(){
     var self = this;
     self.onClickEvent();
     self.edit();
@@ -214,6 +212,6 @@ View.prototype.Run = function(){
 
 
 $(function(){
-    var view = new View();
-    view.Run();
+    var goods = new _Goods();
+    goods.Run();
 });

@@ -85,7 +85,8 @@
                         <th>价格</th>
                         <th>运费</th>
                         <th>商品</th>
-                        <th>时间</th>
+                        <th>规格</th>
+{#                        <th>时间</th>#}
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -98,7 +99,8 @@
                             <td>{{ news.price }}</td>
                             <td>{{ news.fare }}</td>
                             <td>{{ news.shop }}</td>
-                            <td>{{ news.addTime|time_format }}</td>
+                            <td>{{ news.standars}}</td>
+{#                            <td>{{ news.addTime|time_format }}</td>#}
                             <td>
                                 <a target="_blank" href="/goodsEditer?id={{ news.id }}" class="btn btn-info btn-xs">编辑</a>
                                 <a href="{% url 'cms:get_delete' %}?id={{ news.id }}" class="btn btn-danger btn-xs delete-btn1" data-order-id="{{ news.id }}">删除</a>

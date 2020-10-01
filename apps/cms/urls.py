@@ -21,9 +21,10 @@ urlpatterns = [
     path("get_delete",views.get_delete,name="get_delete"),
     path("goods_list_show",views.goods_list_show,name="goods_list_show"),
     path("edit",views.edit,name="edit"),
-    path("update",views.update,name="update"),
+    path("goods_update",views.goods_update,name="goods_update"),
     path("shopadd",views.shopadd,name="shopadd"),
     path("get_goods",views.get_goods,name="get_goods"),
+    path("show_goods",views.show_goods,name="show_goods"),
 ]
 
 

@@ -9,3 +9,8 @@ def lists(value):
   list = [x.replace("'",'').replace(" ",'') for x in li.split(',')]
   print("list",list)
   return list
+
+@register.filter()
+def extra(value):
+  return value[0]
+

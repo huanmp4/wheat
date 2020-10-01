@@ -2,8 +2,9 @@
 from django import template
 from datetime import datetime
 from django.utils.timezone import now as now_func,localtime
-
+import time
 register = template.Library()
+import json
 
 
 @register.filter
@@ -42,3 +43,18 @@ def time_format(value):
         return value
 
     return localtime(value).strftime("%Y/%m/%d %H:%M:%S")
+
+
+@register.filter
+def strf_time(value):
+    if value:
+
+        value = dict(value)
+        v = value.get('$date')
+        if v != None and v != '':
+            t = time.strftime("%Y/%m/%d %H:%M:%S", time.localtime((int(v)) / 1000))
+            return t
+        else:
+            return v
+    else:
+        return value

@@ -99,7 +99,7 @@
 {#                            <td><a target="_blank" href="{% url 'news:news_detail' news_id=news.pk %}">{{ news.title }}</a></td>#}
                             <td>{{ news.orderid }}</td>
                             <td>{{ news.goodname }}</td>
-                            <td>{{ news.creattime|time_format }}</td>
+                            <td>{{ news.creattime|strf_time }}</td>
                             <td>{{ news.fare }}</td>
                             <td>{{ news.goodid }}</td>
                             <td>{{ news.num }}</td>
@@ -108,8 +108,8 @@
                             <td>{{ news.status }}</td>
                             <td style="width:30px;text-overflow-ellipsis: true;">{{ news.pic }}</td>
                             <td>
-                                <a target="_blank" href="/orderedit?id={{ news.id }}" class="btn btn-info btn-xs">编辑</a>
-                                <a href="{% url 'cms:orderdelete' %}?id={{ news.id }}" class="btn btn-danger btn-xs delete-btn1" data-order-id="{{ news.orderid }}">删除</a>
+                                <a target="_blank" href="/orderedit?id={{ news.orderid }}" class="btn btn-info btn-xs">编辑</a>
+                                <a href="{% url 'cms:orderdelete' %}?id={{ news.orderid }}" class="btn btn-danger btn-xs delete-btn1" data-order-id="{{ news.orderid }}">删除</a>
                             </td>
                         </tr>
                     {% endfor %}
