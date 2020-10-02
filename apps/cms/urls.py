@@ -8,7 +8,7 @@ from django.conf import settings
 from django.views.static import serve
 from django.conf import settings
 
-app_name = 'cms'
+# app_name = 'cms'
 
 urlpatterns = [
     path("",views.index,name="index"),
