@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0bb56f9-b674-4d8c-97a0-793e17e7c8cf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/arttemplate/template-web.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/solid/add.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/models.py" afterPath="$PROJECT_DIR$/apps/cms/models.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/templatetags/lists.py" afterPath="$PROJECT_DIR$/apps/cms/templatetags/lists.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/templatetags/news_filters.py" afterPath="$PROJECT_DIR$/apps/cms/templatetags/news_filters.py" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" afterPath="$PROJECT_DIR$/apps/cms/views.py" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/home.css" afterPath="$PROJECT_DIR$/front/src/css/home.css" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/goods_update.js" afterPath="$PROJECT_DIR$/front/src/js/goods_update.js" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/home.js" afterPath="$PROJECT_DIR$/front/src/js/home.js" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/view.js" afterPath="$PROJECT_DIR$/front/src/js/view.js" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/goods_add.html" afterPath="$PROJECT_DIR$/front/templates/cms/goods_add.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/goods_edit.html" afterPath="$PROJECT_DIR$/front/templates/cms/goods_edit.html" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/view.html" afterPath="$PROJECT_DIR$/front/templates/cms/view.html" />
-      <change beforePath="$PROJECT_DIR$/media/img/微信图片_20200405152752_ww0fKrJ.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/media/img/荞麦详情.jpg" afterPath="" />
       <change beforePath="$PROJECT_DIR$/uwsgi.ini" afterPath="$PROJECT_DIR$/uwsgi.ini" />
       <change beforePath="$PROJECT_DIR$/wheat/settings.py" afterPath="$PROJECT_DIR$/wheat/settings.py" />
     </list>
@@ -44,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/uwsgi.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -53,8 +37,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wheat/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            <state relative-caret-position="661">
+              <caret line="130" column="20" lean-forward="true" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -903,15 +887,15 @@
     <entry file="file://$PROJECT_DIR$/uwsgi.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wheat/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="661">
+          <caret line="130" column="20" lean-forward="true" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
           <folding />
         </state>
       </provider>
