@@ -5,6 +5,7 @@
 {% block script %}
     <link rel="stylesheet" href="{% static 'css/view.css' %}">
     <script src="{% static 'js/goods_update.js' %}"></script>
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
@@ -52,14 +53,22 @@
                 <span style="margin-left:20px;color:silver">4张轮播图：</span>
                 <div class="card-img-top card-img-top1">
                     {% for pic in good.toppicture %}
-                        <img class="imagedown imagedown{{ forloop.counter }}" data-url="" src="{{ pic }}" alt="...">
+                        <img class="imagedown imagedown{{ forloop.counter }}" data-url="{{ pic }}" src="{{ pic }}" alt="...">
                     {% endfor %}
-                    <input type="file" class="file0 hideInput" >
+                    <input type="file" class="file0 hideInput"
                     <input type="file" class="file1 hideInput">
                     <input type="file" class="file2 hideInput">
                     <input type="file" class="file3 hideInput">
                     <input type="file" class="file4 hideInput">
                     <input type="file" class="file5 hideInput">
+                </div>
+                <span style="margin-left:20px;color:silver">商业介绍图：</span>
+                <div class="card-img-top card-img-top1 business-group">
+                    {% for bus in good.businessImage|lists %}
+                        <img class="imagedown imagedown10{{ forloop.counter }} " id="imagedown10{{ forloop.counter }}" data-url="{{ bus }}" src="{{ bus }}" alt="...">
+                    {% endfor %}
+                    <img class="imagedown imagedown6 image-add" data-url="" src="http://vs6688.com:81/media/solid/add.png" alt="...">
+                    <input type="file" class="file6 hideInput">
                 </div>
             </form>
         </div>
@@ -67,4 +76,13 @@
 </div>
 {% endfor %}
 
+ <script id="business-image" type="text/html">
+    {% verbatim %}
+        <img class="imagedown imagedown10 " id="{{ imgName }}" data-url="" src="{{ url }}" alt="...">
+    {% endverbatim %}
+</script>
+    <input type="file" id="imagedown201" class="file10 hideInput">
+    <input type="file" id="imagedown202" class="file10 hideInput">
+    <input type="file" id="imagedown203" class="file10 hideInput">
+    <input type="file" id="imagedown204" class="file10 hideInput">
 {% endblock %}

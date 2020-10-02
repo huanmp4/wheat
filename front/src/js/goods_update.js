@@ -14,9 +14,64 @@ function _Goods(){
     this.imagedown3 = $(".imagedown3");
     this.imagedown4 = $(".imagedown4");
     this.imagedown5 = $(".imagedown5");
+    this.imagedown6 = $(".imagedown6");
+    this.imagedown101 = $("#imagedown101");
+    this.imagedown102 = $("#imagedown102");
+    this.imagedown103 = $("#imagedown103");
+    this.imagedown104 = $("#imagedown104");
 }
 
+//商业介绍图点击
+_Goods.prototype.findEQ = function(){
+    var self = this;
+    var business_group = $(".business-group");
+    console.log("1111");
+    var group_count = business_group.children(".imagedown");
+    if (group_count.length >= 5){
+        xfzalert.alertError("不能再多了")
+    }else{
+        var imgName = "imagedown10" + group_count.length;
+        var fileInputName = "imagedown20" + group_count.length;
+        console.log("数量imgName",imgName);
+        var tl = template("business-image",{"url":"http://127.0.0.1:8000/media/solid/bg_person.png","imgName":imgName,"fileInputName":fileInputName});
+        business_group.prepend(tl);
+        self.func2({"1":fileInputName,"2":imgName});
+    }
+};
 
+//商业介绍图点击2
+_Goods.prototype.func2 = function(e){
+    var self = this;
+    var _file = e["1"];
+    var imgName = e["2"];
+    var file = $("#" + _file);
+    file.click();
+    $("#"+imgName).on("click",function(){
+        file.click();
+    });
+    file.change(function(){
+        var file = this.files[0];
+        var formdata = new FormData();
+        formdata.append("file",file);
+        xfzajax.post({
+            "url":"/imageupdata",
+            "data":formdata,
+            "processData":false,
+            "contentType":false,
+            "success":function(e){
+                console.log("e",e);
+                if (e.code === 200){
+                    var url = e.data;
+                    var img = $("#" + imgName);
+                    img.attr("src",url);
+                    img.attr("data-url",url);
+                }else{
+                    console.log("图片上传给服务器回调失败")
+                }
+            }
+        })
+    })
+};
 
 _Goods.prototype.uploadImages = function(){
     var self = this;
@@ -44,6 +99,28 @@ _Goods.prototype.uploadImages = function(){
         e.preventDefault();
         self.func({"1":self.file5,"2":self.imagedown5});
     });
+    self.imagedown6.click(function(e){
+        e.preventDefault();
+        self.findEQ()
+    });
+    self.imagedown101.click(function(e){
+        e.preventDefault();
+        self.func2({"1":"imagedown201","2":"imagedown101"})
+    });
+    self.imagedown102.click(function(e){
+        e.preventDefault();
+        console.log("222222222222222222222");
+        self.func2({"1":"imagedown202","2":"imagedown102"})
+    });
+    self.imagedown103.click(function(e){
+        e.preventDefault();
+        self.func2({"1":"imagedown203","2":"imagedown103"})
+    });
+    self.imagedown104.click(function(e){
+        e.preventDefault();
+        self.func2({"1":"imagedown204","2":"imagedown104"})
+    });
+
 
 };
 
@@ -160,6 +237,27 @@ _Goods.prototype.submitEditer = function(){
         var fare = shell.find('input[name="fare"]').val();
         var shop = shell.find('input[name="shopName"]').val();
         var standars = shell.find('input[name="standars"]').val();
+
+        var businessImage = [];
+        var file_p101 = $("#imagedown101").attr("data-url");
+        var file_p102 = $("#imagedown102").attr("data-url");
+        var file_p103 = $("#imagedown103").attr("data-url");
+        var file_p104 = $("#imagedown104").attr("data-url");
+        if (file_p101 && file_p101 !== ''){
+            businessImage.push(file_p101)
+        }
+        if (file_p102 && file_p102 !== ''){
+            businessImage.push(file_p102)
+        }
+        if (file_p103 && file_p103 !== ''){
+            businessImage.push(file_p103)
+        }
+        if (file_p104 && file_p104 !== ''){
+            businessImage.push(file_p104)
+        }
+        console.log("businessImage",businessImage);
+        var businessImage1 = "["+businessImage.toString() + "]";
+        console.log("businessImage:",businessImage);
         console.log("good_id",good_id);
         console.log("file_p0",file_p0);
         console.log("file_p1",file_p1);
@@ -186,13 +284,16 @@ _Goods.prototype.submitEditer = function(){
                 "fare":fare,
                 "price":price,
                 "shop":shop,
-                "standars":standars
+                "standars":standars,
+                "businessImage":businessImage1
             },
             "success":function(e){
                 if (e.code ===200){
                     console.log("ok");
-                    window.location.reload();
                     xfzalert.alertSuccess("修改成功")
+                }
+                else{
+                    xfzalert.alertError("修改失败")
                 }
 
             }
@@ -206,7 +307,7 @@ _Goods.prototype.Run = function(){
     self.edit();
     self.closeEventBTN();
     self.submitEditer();
-    self.uploadImages()
+    self.uploadImages();
 };
 
 

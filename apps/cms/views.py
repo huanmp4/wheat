@@ -74,9 +74,6 @@ def goodsEditer(request):
     _query = query + token
 
     id = request.GET.get('id')
-    print("=" * 30)
-    print("id:",id )
-    print("=" * 30)
     form_data = {
         "env":env1,
         "query":"db.collection(\"goods\").where({_id:\"%s\"}).get()"%id,
@@ -86,9 +83,8 @@ def goodsEditer(request):
     data = eval(res.text)["data"]
     goods = []
     for d in data:
-        print("="*30)
+
         d = dict(json.loads(d))
-        print("d:", d)
         id = d["_id"]
         d["id"] = id
         goods.append(d)
@@ -115,9 +111,11 @@ def goods_update(request):
     fare = request.POST.get("fare")
     shop = request.POST.get("shop")
     standars = request.POST.get("standars")
+    businessImage = request.POST.get("businessImage")
+    print("businessImage:",businessImage)
     toppicture = [url1, url2, url3, url4]
 
-    update_data = {"detail":url10, "shoplogo":url5, "name":name, "price":price, "shop":shop,"fare":fare, "standars":standars, "toppicture":toppicture}
+    update_data = {"detail":url10, "shoplogo":url5, "name":name, "price":price, "shop":shop,"fare":fare, "standars":standars, "toppicture":toppicture,"businessImage":businessImage}
     form_data = {
         "env":env1,
         "query":"db.collection(\"goods\").where({_id:\"%s\"}).update({data:%s})"%(id,update_data)
@@ -150,7 +148,6 @@ def imageupdata(request):
     suffix = filename1.split(".")[-1]
     filename = str(int(time.mktime(datetime.datetime.now().timetuple()))) + '.' +suffix
     file.name = filename
-    print("file:", file)
     url = request.build_absolute_uri(settings.MEDIA_URL + "img/" + filename)
     IMG.objects.create(img=file, name=filename, url=url)
 
@@ -172,10 +169,12 @@ def writeIndatabase(request):
     price = request.POST.get("price")
     fare = request.POST.get("fare")
     shop = request.POST.get("shop")
+    businessImage = request.POST.get("businessImage")
+    print("businessImage",businessImage)
     standars = request.POST.get("standars")
     toppicture = [url1, url2, url3, url4]
     update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
-                   "standars": standars, "toppicture": toppicture}
+                   "standars": standars, "toppicture": toppicture,"businessImage":businessImage}
     form_data = {
         "env": env1,
         "query": "db.collection(\"goods\").add({data:[%s]})"%update_data

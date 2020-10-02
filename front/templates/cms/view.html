@@ -55,12 +55,20 @@
                 <img class="imagedown " data-url="" src="{{ img }}" alt="...">
             {% endfor %}
             </div>
+            {% if good.businessImage %}
+                <span style="margin-left:20px;color:silver">商业宣传图：</span>
+            {% endif %}
+            <div class="card-img-top card-img-top1">
+            {% for img in good.businessImage|lists %}
+                <img class="imagedown " data-url="" src="{{ img }}" alt="...">
+            {% endfor %}
+            </div>
         </form>
     </div>
 {% endfor %}
 </div>
 
-{#http://127.0.0.1:8000/media/img/bg.jpg#}
+{#http://vs6688.com:81/media/img/bg.jpg#}
 
 <div class="shell">
     <div class="wrapper wrapper2">
@@ -107,6 +115,17 @@
                     <input type="file" class="file3 hideInput">
                     <input type="file" class="file4 hideInput">
                     <input type="file" class="file5 hideInput">
+                </div>
+                <span style="margin-left:20px;color:silver">商业介绍图：</span>
+                <div class="card-img-top card-img-top1 business-group">
+                    <img class="imagedown imagedown101" id="imagedown101" data-url="" src="http://vs6688.com:81/media/solid/bg.jpg" alt="...">
+                    <img class="imagedown imagedown102" id="imagedown102" data-url="" src="http://vs6688.com:81/media/solid/bg.jpg" alt="...">
+                    <img class="imagedown imagedown103" id="imagedown103" data-url="" src="http://vs6688.com:81/media/solid/bg.jpg" alt="...">
+                    <img class="imagedown imagedown104" id="imagedown104" data-url="" src="http://vs6688.com:81/media/solid/bg.jpg" alt="...">
+                    <input type="file" class="file6 hideInput" id="imagedown201">
+                    <input type="file" class="file7 hideInput" id="imagedown202">
+                    <input type="file" class="file8 hideInput" id="imagedown203">
+                    <input type="file" class="file9 hideInput" id="imagedown204">
                 </div>
             </div>
         </div>

@@ -2,19 +2,76 @@ function Home(){
     this.uploadIMG = $("uploadIMG");
     this.submitBTN = $("#submitBTN");
     this.formTable = $(".formTables");
+    this.businessgroup = $(".business-group");
     this.file0 = $(".file0");
     this.file1 = $(".file1");
     this.file2 = $(".file2");
     this.file3 = $(".file3");
     this.file4 = $(".file4");
     this.file5 = $(".file5");
+    this.file6 = $(".file6");
+    this.file10 = $(".file10");
     this.imagedown0 = $(".imagedown0");
     this.imagedown1 = $(".imagedown1");
     this.imagedown2 = $(".imagedown2");
     this.imagedown3 = $(".imagedown3");
     this.imagedown4 = $(".imagedown4");
     this.imagedown5 = $(".imagedown5");
+    this.imagedown6 = $(".imagedown6");
 }
+
+
+//商业介绍图点击
+Home.prototype.findEQ = function(){
+    var self = this;
+    var business_group = $(".business-group");
+    console.log("1111");
+    var group_count = business_group.children(".imagedown");
+    if (group_count.length >= 5){
+        xfzalert.alertError("不能再多了")
+    }else{
+        var imgName = "imagedown10" + group_count.length;
+        var fileInputName = "imagedown20" + group_count.length;
+        console.log("数量imgName",imgName);
+        var tl = template("business-image",{"url":"http://127.0.0.1:8000/media/solid/bg_person.png","imgName":imgName,"fileInputName":fileInputName});
+        business_group.append(tl);
+        var file = $("#" + fileInputName);
+        self.func2({"1":file,"2":imgName});
+    }
+};
+
+//商业介绍图点击2
+Home.prototype.func2 = function(e){
+    var self = this;
+    var file = e["1"];
+    var imgName = e["2"];
+    file.click();
+    $("#"+imgName).on("click",function(){
+        file.click();
+    });
+    file.change(function(){
+        var file = this.files[0];
+        var formdata = new FormData();
+        formdata.append("file",file);
+        xfzajax.post({
+            "url":"/imageupdata",
+            "data":formdata,
+            "processData":false,
+            "contentType":false,
+            "success":function(e){
+                console.log("e",e);
+                if (e.code === 200){
+                    var url = e.data;
+                    var img = $("#" + imgName);
+                    img.attr("src",url);
+                    img.attr("data-url",url);
+                }else{
+                    console.log("图片上传给服务器回调失败")
+                }
+            }
+        })
+    })
+};
 
 Home.prototype.onclick = function(){
     var inputGroupFile01 = $("#inputGroupFile01");
@@ -60,10 +117,16 @@ Home.prototype.uploadImages = function(){
     });
     self.imagedown5.click(function(e){
         e.preventDefault();
+        console.log("2222");
         self.func({"1":self.file5,"2":self.imagedown5});
     });
-
+    self.imagedown6.click(function(e){
+        console.log("2222");
+        e.preventDefault();
+        self.findEQ()
+    });
 };
+
 
 Home.prototype.func = function(e){
     var file = e["1"];
@@ -93,6 +156,7 @@ Home.prototype.func = function(e){
     })
 };
 
+
 Home.prototype.submitFormEvent = function(){
     var self = this;
     self.submitBTN.click(function(e){
@@ -108,6 +172,27 @@ Home.prototype.submitFormEvent = function(){
         var fare = self.formTable.find("input[name='fare']").val();
         var shop = self.formTable.find("input[name='shopName']").val();
         var standars = self.formTable.find("input[name='standars']").val();
+
+        var businessImage = [];
+        var file_p101 = $("#imagedown101").attr("data-url");
+        var file_p102 = $("#imagedown102").attr("data-url");
+        var file_p103 = $("#imagedown103").attr("data-url");
+        var file_p104 = $("#imagedown104").attr("data-url");
+        if (file_p101 && file_p101 !== ''){
+            businessImage.push(file_p101)
+        }
+        if (file_p102 && file_p102 !== ''){
+            businessImage.push(file_p102)
+        }
+        if (file_p103 && file_p103 !== ''){
+            businessImage.push(file_p103)
+        }
+        if (file_p104 && file_p104 !== ''){
+            businessImage.push(file_p104)
+        }
+        console.log("businessImage",businessImage);
+        var businessImage1 = "["+businessImage.toString() + "]";
+
         xfzajax.post({
             "url":"/writeIndatabase",
             "data":{
@@ -121,7 +206,8 @@ Home.prototype.submitFormEvent = function(){
                 "fare":fare,
                 "price":price,
                 "shop":shop,
-                "standars":standars
+                "standars":standars,
+                "businessImage":businessImage1
             },
             "success":function(e){
                 if(e.code === 200){

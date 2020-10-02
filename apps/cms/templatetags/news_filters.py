@@ -48,7 +48,6 @@ def time_format(value):
 @register.filter
 def strf_time(value):
     if value:
-
         value = dict(value)
         v = value.get('$date')
         if v != None and v != '':

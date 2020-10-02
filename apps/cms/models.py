@@ -20,10 +20,10 @@ class Goods(models.Model):
 
 
 class orders(models.Model):
-  fare = models.IntegerField(max_length=200)
+  fare = models.IntegerField()
   goodid = models.CharField(max_length=200)
   goodname = models.CharField(max_length=200)
-  num = models.IntegerField(max_length=200)
+  num = models.IntegerField()
   orderid = models.CharField(max_length=200)
   pic = models.CharField(max_length=500)
   shop = models.CharField(max_length=200)
