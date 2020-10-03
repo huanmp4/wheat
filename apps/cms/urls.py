@@ -8,7 +8,7 @@ from django.conf import settings
 from django.views.static import serve
 from django.conf import settings
 
-# app_name = 'cms'
+app_name = 'cms'
 
 urlpatterns = [
     path("",views.index,name="index"),
@@ -40,5 +40,5 @@ urlpatterns += [
 urlpatterns += [
                   # url(r'^upload', views.uploadImg,name="upload"),
                   # url(r'^show', views.showImg,name="show"),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]
 # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  这句话是用来指定和映射静态文件
