@@ -224,7 +224,7 @@ _Goods.prototype.submitEditer = function(){
     var self = this;
     var submit_edit = $(".btn-edit-confirm");
     submit_edit.click(function(){
-        var shell = $(".shell");
+        var shell = $(".shell-second");
         var good_id = shell.find('.closeBTN1').attr("data-goodid");
         var file_p0 = shell.find('.imagedown0').attr("src");
         var file_p1 = shell.find('.imagedown1').attr("src");

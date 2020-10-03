@@ -205,7 +205,7 @@ View.prototype.submitEditer = function(){
         var file_p3 = shell.find('.imagedown3').attr("data-url");
         var file_p4 = shell.find('.imagedown4').attr("data-url");
         var file_p5 = shell.find('.imagedown5').attr("data-url");
-
+        console.log("file_p0",file_p0);
         var businessImage = [];
         var file_p101 = $("#imagedown101").attr("data-url");
         var file_p102 = $("#imagedown102").attr("data-url");

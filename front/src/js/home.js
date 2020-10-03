@@ -25,14 +25,12 @@ function Home(){
 Home.prototype.findEQ = function(){
     var self = this;
     var business_group = $(".business-group");
-    console.log("1111");
     var group_count = business_group.children(".imagedown");
     if (group_count.length >= 5){
         xfzalert.alertError("不能再多了")
     }else{
         var imgName = "imagedown10" + group_count.length;
         var fileInputName = "imagedown20" + group_count.length;
-        console.log("数量imgName",imgName);
         var tl = template("business-image",{"url":"http://127.0.0.1:8000/media/solid/bg_person.png","imgName":imgName,"fileInputName":fileInputName});
         business_group.append(tl);
         var file = $("#" + fileInputName);
@@ -42,10 +40,12 @@ Home.prototype.findEQ = function(){
 
 //商业介绍图点击2
 Home.prototype.func2 = function(e){
+
     var self = this;
     var file = e["1"];
     var imgName = e["2"];
     file.click();
+    console.log("22222222222",file);
     $("#"+imgName).on("click",function(){
         file.click();
     });
@@ -117,11 +117,9 @@ Home.prototype.uploadImages = function(){
     });
     self.imagedown5.click(function(e){
         e.preventDefault();
-        console.log("2222");
         self.func({"1":self.file5,"2":self.imagedown5});
     });
     self.imagedown6.click(function(e){
-        console.log("2222");
         e.preventDefault();
         self.findEQ()
     });
