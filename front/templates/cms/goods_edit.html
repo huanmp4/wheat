@@ -50,8 +50,11 @@
                 <span style="color:silver;font-size:12px;"><br/>商铺小头像：</span>
                 <img class="shoplogo imagedown5" data-url="" src="{{ good.shoplogo }}" alt="...">
               </div>
-                <span style="margin-left:20px;color:silver">4张轮播图：</span>
-                <div class="card-img-top card-img-top1">
+                <div>
+                    <span style="margin-left:20px;color:silver">4张轮播图：</span>
+                    <a class="btn btn-sm btn-danger btn-delete-banner">删除轮播图</a>
+                </div>
+                <div class="card-img-top card-img-top1 card-img-top-group">
                     {% for pic in good.toppicture %}
                         <img class="imagedown imagedown{{ forloop.counter }}" data-url="{{ pic }}" src="{{ pic }}" alt="...">
                     {% endfor %}
@@ -62,7 +65,10 @@
                     <input type="file" class="file4 hideInput">
                     <input type="file" class="file5 hideInput">
                 </div>
-                <span style="margin-left:20px;color:silver">商业介绍图：</span>
+                <div>
+                    <span style="margin-left:20px;color:silver">商业介绍图：</span>
+                    <a class="btn btn-sm btn-danger btn-delete-businessIMG">删除商业图</a>
+                </div>
                 <div class="card-img-top card-img-top1 business-group">
                     {% for bus in good.businessImage|lists %}
                         <img class="imagedown imagedown10{{ forloop.counter }} " id="imagedown10{{ forloop.counter }}" data-url="{{ bus }}" src="{{ bus }}" alt="...">

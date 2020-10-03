@@ -101,21 +101,28 @@ def goods_update(request):
     id = request.POST.get("good_id")
     url0 = request.POST.get("file_p0")
     url10 = [url0]
-    url1 = request.POST.get("file_p1")
-    url2 = request.POST.get("file_p2")
-    url3 = request.POST.get("file_p3")
-    url4 = request.POST.get("file_p4")
+    url1 = request.POST.get("file_p1" or '')
+    url2 = request.POST.get("file_p2"  or '')
+    url3 = request.POST.get("file_p3"  or '')
+    url4 = request.POST.get("file_p4"  or '')
     url5 = request.POST.get("file_p5")
     name = request.POST.get("name")
     price = request.POST.get("price")
     fare = request.POST.get("fare")
     shop = request.POST.get("shop")
     standars = request.POST.get("standars")
+    toppicture = []
+    if url1:
+        toppicture.append(url1)
+    if url2:
+        toppicture.append(url2)
+    if url3:
+        toppicture.append(url3)
+    if url4:
+        toppicture.append(url4)
     businessImage = request.POST.get("businessImage")
-    print("businessImage:",businessImage)
-    toppicture = [url1, url2, url3, url4]
-
-    update_data = {"detail":url10, "shoplogo":url5, "name":name, "price":price, "shop":shop,"fare":fare, "standars":standars, "toppicture":toppicture,"businessImage":businessImage}
+    update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
+                   "standars": standars, "toppicture": toppicture, "businessImage": businessImage}
     form_data = {
         "env":env1,
         "query":"db.collection(\"goods\").where({_id:\"%s\"}).update({data:%s})"%(id,update_data)
@@ -169,12 +176,15 @@ def writeIndatabase(request):
     price = request.POST.get("price")
     fare = request.POST.get("fare")
     shop = request.POST.get("shop")
-    businessImage = request.POST.get("businessImage")
-    print("businessImage",businessImage)
     standars = request.POST.get("standars")
     toppicture = [url1, url2, url3, url4]
-    update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
-                   "standars": standars, "toppicture": toppicture,"businessImage":businessImage}
+    businessImage = request.POST.get("businessImage")
+    if businessImage == '':
+        update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
+                       "standars": standars, "toppicture": toppicture}
+    else:
+        update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
+                       "standars": standars, "toppicture": toppicture, "businessImage": businessImage}
     form_data = {
         "env": env1,
         "query": "db.collection(\"goods\").add({data:[%s]})"%update_data

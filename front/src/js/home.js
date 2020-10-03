@@ -189,7 +189,13 @@ Home.prototype.submitFormEvent = function(){
             businessImage.push(file_p104)
         }
         console.log("businessImage",businessImage);
-        var businessImage1 = "["+businessImage.toString() + "]";
+        var businessImage1;
+        if (businessImage && businessImage[0] && businessImage[0] !== ''){
+            businessImage1 = "["+businessImage.toString() + "]";
+        }else{
+            businessImage1 = "";
+        }
+
 
         xfzajax.post({
             "url":"/writeIndatabase",

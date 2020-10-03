@@ -21,6 +21,25 @@ function _Goods(){
     this.imagedown104 = $("#imagedown104");
 }
 
+_Goods.prototype.deleteBusinessIMG = function(){
+    //删除商业图
+    var bsn_del = $(".btn-delete-businessIMG");
+    var bsn_group = $(".business-group");
+    bsn_del.click(function(){
+        console.log("删除商业图");
+        bsn_group.children().filter("img").remove();
+    });
+
+    //删除轮播图
+    var banner_del = $(".btn-delete-banner");
+    var  banner_group = $(".card-img-top-group");
+    banner_del.click(function(){
+        console.log("删除商业图");
+        banner_group.children().filter("img").remove();
+    });
+};
+
+
 //商业介绍图点击
 _Goods.prototype.findEQ = function(){
     var self = this;
@@ -255,9 +274,12 @@ _Goods.prototype.submitEditer = function(){
         if (file_p104 && file_p104 !== ''){
             businessImage.push(file_p104)
         }
-        console.log("businessImage",businessImage);
-        var businessImage1 = "["+businessImage.toString() + "]";
-        console.log("businessImage:",businessImage);
+       var businessImage1;
+        if (businessImage && businessImage[0] && businessImage[0] !== ''){
+            businessImage1 = "["+businessImage.toString() + "]";
+        }else{
+            businessImage1 = "";
+        }
         console.log("good_id",good_id);
         console.log("file_p0",file_p0);
         console.log("file_p1",file_p1);
@@ -308,6 +330,7 @@ _Goods.prototype.Run = function(){
     self.closeEventBTN();
     self.submitEditer();
     self.uploadImages();
+    self.deleteBusinessIMG()
 };
 
 
