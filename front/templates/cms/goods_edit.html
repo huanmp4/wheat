@@ -26,30 +26,30 @@
             <form action="#" class="formTables">
                 <div style="margin-left:80px;color:silver">主图：</div>
                 <img class="card-img-top card-img-main imagedown0" data-url="{{ good.detail }}" src="{{ good.detail|extra }}"  alt="...">
-                  <div class="card-body">
-                    <div class="input-group">
-                        <div  class="input-group-prepend"><span class="input-group-text" id="basic-addon1">name</span></div>
-                        <input name="name" class="form-control" type="text" placeholder="" value="{{ good.name }}">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">price</span></div>
-                        <input name="price" class="form-control" type="text" placeholder="" value="{{ good.price }}" >
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">shop</span></div>
-                        <input name="shopName" class="form-control" type="text" placeholder="" value="{{ good.shop }}" >
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">fare</span></div>
-                        <input name="fare" class="form-control" type="text" placeholder="" value="{{ good.fare }}">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">standars</span></div>
-                        <input name="standars" class="form-control" type="text" placeholder="" value="{{ good.standars }}" >
-                    </div>
-                    <span style="color:silver;font-size:12px;"><br/>商铺小头像：</span>
-                    <img class="shoplogo imagedown5" data-url="" src="{{ good.shoplogo }}" alt="...">
-                  </div>
+              <div class="card-body">
+                <div class="input-group">
+                    <div  class="input-group-prepend"><span class="input-group-text" id="basic-addon1">name</span></div>
+                    <input name="name" class="form-control" type="text" placeholder="" value="{{ good.name }}">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">price</span></div>
+                    <input name="price" class="form-control" type="text" placeholder="" value="{{ good.price }}" >
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">shop</span></div>
+                    <input name="shopName" class="form-control" type="text" placeholder="" value="{{ good.shop }}" >
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">fare</span></div>
+                    <input name="fare" class="form-control" type="text" placeholder="" value="{{ good.fare }}">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">standars</span></div>
+                    <input name="standars" class="form-control" type="text" placeholder="" value="{{ good.standars }}" >
+                </div>
+                <span style="color:silver;font-size:12px;"><br/>商铺小头像：</span>
+                <img class="shoplogo imagedown5" data-url="" src="{{ good.shoplogo }}" alt="...">
+              </div>
                 <span style="margin-left:20px;color:silver">4张轮播图：</span>
                 <div class="card-img-top card-img-top1">
                     {% for pic in good.toppicture %}

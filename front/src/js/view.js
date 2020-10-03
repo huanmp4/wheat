@@ -165,18 +165,26 @@ View.prototype.edit = function(){
                     if (bsnArray[0]){
                         shell.find('.imagedown101').attr("src",bsnArray[0]);
                         shell.find('.imagedown101').attr("data-url",bsnArray[0]);
+                    }else{
+                        shell.find('.imagedown101').attr("src",'');
                     }
                     if (bsnArray[1]){
                         shell.find('.imagedown102').attr("src",bsnArray[1]);
                         shell.find('.imagedown102').attr("data-url",bsnArray[1]);
+                    }else{
+                        shell.find('.imagedown102').attr("src",'');
                     }
                     if (bsnArray[2]){
                         shell.find('.imagedown103').attr("src",bsnArray[2]);
                         shell.find('.imagedown103').attr("data-url",bsnArray[2]);
+                    }else{
+                        shell.find('.imagedown103').attr("src",'');
                     }
                     if (bsnArray[3]){
                         shell.find('.imagedown104').attr("src",bsnArray[3]);
                         shell.find('.imagedown104').attr("data-url",bsnArray[3]);
+                    }else{
+                        shell.find('.imagedown104').attr("src",'');
                     }
                     shell.find('input[name="name"]').val(data.name);
                     shell.find('input[name="price"]').val(data.price);
