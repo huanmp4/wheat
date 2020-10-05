@@ -172,10 +172,19 @@ def order_filter(request):
   #   "query": "db.collection(\"order\").where({creattime:_.and(_.gt(%s),_.tl(%s)),goodname:%s,shop:%s,orderid:%s}).get()" % (
   #   start, end, title, title,title)
   # }
-  form_update = {
-      "env": env1,
-      "query": "db.collection(\"order\").where({goodname:\"%s\"}).get()" % (title)
-  }
+
+  if title and title != '':
+      title = title
+      form_update = {
+          "env": env1,
+          "query": "db.collection(\"order\").where({goodname:\"%s\"}).get()" %(title)
+      }
+  else:
+      form_update = {
+          "env": env1,
+          "query": "db.collection(\"order\").get()"
+      }
+
   headers = {'content-type': "application/json"}
   res2 = requests.post(_query, data=json.dumps(form_update), headers=headers)
   data = eval(res2.text)["data"]

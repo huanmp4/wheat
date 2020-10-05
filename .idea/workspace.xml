@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0bb56f9-b674-4d8c-97a0-793e17e7c8cf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/apps/cms/views.py" afterPath="$PROJECT_DIR$/apps/cms/views.py" />
       <change beforePath="$PROJECT_DIR$/apps/cms/views_order.py" afterPath="$PROJECT_DIR$/apps/cms/views_order.py" />
     </list>
@@ -90,8 +89,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="290" column="2" lean-forward="true" selection-start-line="290" selection-start-column="2" selection-end-line="293" selection-end-column="3" />
+            <state relative-caret-position="250">
+              <caret line="282" column="2" lean-forward="true" selection-start-line="282" selection-start-column="2" selection-end-line="292" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -100,8 +99,8 @@
       <file leaf-file-name="views_order.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/cms/views_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="184" column="17" lean-forward="true" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
+            <state relative-caret-position="371">
+              <caret line="182" column="21" lean-forward="true" selection-start-line="182" selection-start-column="21" selection-end-line="182" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -168,9 +167,9 @@
       <find>goods_update</find>
       <find>orderVie</find>
       <find>_add</find>
-      <find>orderview</find>
       <find>add</find>
       <find>where</find>
+      <find>orderview</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -908,16 +907,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="290" column="2" lean-forward="true" selection-start-line="290" selection-start-column="2" selection-end-line="293" selection-end-column="3" />
+        <state relative-caret-position="250">
+          <caret line="282" column="2" lean-forward="true" selection-start-line="282" selection-start-column="2" selection-end-line="292" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/cms/views_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="184" column="17" lean-forward="true" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
+        <state relative-caret-position="371">
+          <caret line="182" column="21" lean-forward="true" selection-start-line="182" selection-start-column="21" selection-end-line="182" selection-end-column="21" />
           <folding />
         </state>
       </provider>

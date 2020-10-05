@@ -280,18 +280,23 @@ def goods_filter(request):
         else:
           end = datetime.datetime.now()
           end = time.mktime(end.timetuple())
-  if title:
+  if title and title != '':
       title = title
+      form_update = {
+          "env": env1,
+          "query": "db.collection(\"goods\").where({name:\"%s\"}).get()" %(title)
+      }
   else:
-      title = ''
+      form_update = {
+          "env": env1,
+          "query": "db.collection(\"goods\").get()"
+      }
   # form_update = {
   #     "env": env1,
   #     "query": "db.collection(\"goods\").where({create_time:_.and(_.gt(%s),_.lt(%s)),name:\"%s\",shop:\"%s\"}).get()"%(start,end,title,title)
   # }
-  form_update = {
-      "env": env1,
-      "query": "db.collection(\"goods\").where({name:\"%s\"}).get()"%(title)
-  }
+
+
   headers = {'content-type': "application/json"}
   res2 = requests.post(_query, data=json.dumps(form_update), headers=headers)
   data = eval(res2.text)["data"]
