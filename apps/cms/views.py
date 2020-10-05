@@ -179,12 +179,13 @@ def writeIndatabase(request):
     standars = request.POST.get("standars")
     toppicture = [url1, url2, url3, url4]
     businessImage = request.POST.get("businessImage")
+    create_time = time.mktime(datetime.datetime.now().timetuple())
     if businessImage == '':
         update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
-                       "standars": standars, "toppicture": toppicture}
+                       "standars": standars, "toppicture": toppicture,"create_time":create_time}
     else:
         update_data = {"detail": url10, "shoplogo": url5, "name": name, "price": price, "shop": shop, "fare": fare,
-                       "standars": standars, "toppicture": toppicture, "businessImage": businessImage}
+                       "standars": standars, "toppicture": toppicture, "businessImage": businessImage,"create_time":create_time}
     form_data = {
         "env": env1,
         "query": "db.collection(\"goods\").add({data:[%s]})"%update_data
@@ -219,7 +220,7 @@ def writeIndatabase(request):
     return restful.ok()
 
 def shopView(request):
-    goods = models.Goods.objects.all()
+
     token = get_token()
     _query = query + token
 
@@ -256,27 +257,73 @@ def goods_list_show(request):
 
 
 def goods_filter(request):
+  token = get_token()
+  _query = query + token
   start = request.GET.get("start")
   end = request.GET.get("end")
   title = request.GET.get("title")
   print("start:",start)
   print("end:",end)
   print("title:",title)
-  order_data = models.Goods.objects.all()
   if start or end:
-    if start:
-      start = time.strptime(start, '%Y/%m/%d')
-    else:
-      start = datetime.datetime(year=2018, month=6, day=1)
-    if end:
-      end = time.strptime(end, '%Y/%m/%d')
-    else:
-      end = datetime.datetime.now()
-  # order_data = order_data.filter(creattime__gte=start, creattime__lte=end)
+        if start:
+          start = time.strptime(start, '%Y/%m/%d')
+          start = time.mktime(start)
+          print("strptime-start:", start)
+        else:
+          start = datetime.datetime(year=2018, month=6, day=1)
+          start = time.mktime(start.timetuple())
+          print("datetime-start:", start)
+        if end:
+          end = time.strptime(end, '%Y/%m/%d')
+          end = time.mktime(end)
+        else:
+          end = datetime.datetime.now()
+          end = time.mktime(end.timetuple())
   if title:
-    order_data = order_data.filter(Q(name__contains=title) | Q(shop__contains=title) )
+      title = title
+  else:
+      title = ''
+  # form_update = {
+  #     "env": env1,
+  #     "query": "db.collection(\"goods\").where({create_time:_.and(_.gt(%s),_.lt(%s)),name:\"%s\",shop:\"%s\"}).get()"%(start,end,title,title)
+  # }
+  form_update = {
+      "env": env1,
+      "query": "db.collection(\"goods\").where({name:\"%s\"}).get()"%(title)
+  }
+  headers = {'content-type': "application/json"}
+  res2 = requests.post(_query, data=json.dumps(form_update), headers=headers)
+  data = eval(res2.text)["data"]
+  print("data:",data)
+  goods = []
+  for d in data:
+      d = dict(json.loads(d))
+      id = d["_id"]
+      d["id"] = id
+      d.pop("_id")
 
-  return render(request,"cms/goods_list.html",{"goods":order_data})
+      goods.append(d)
+  content = {
+      "goods": goods
+  }
+  return render(request, "cms/goods_list.html", content)
+
+  # order_data = models.Goods.objects.all()
+  # if start or end:
+  #   if start:
+  #     start = time.strptime(start, '%Y/%m/%d')
+  #   else:
+  #     start = datetime.datetime(year=2018, month=6, day=1)
+  #   if end:
+  #     end = time.strptime(end, '%Y/%m/%d')
+  #   else:
+  #     end = datetime.datetime.now()
+  # # order_data = order_data.filter(creattime__gte=start, creattime__lte=end)
+  # if title:
+  #   order_data = order_data.filter(Q(name__contains=title) | Q(shop__contains=title) )
+  #
+  # return render(request,"cms/goods_list.html",{"goods":order_data})
 
 
 def delete(request):

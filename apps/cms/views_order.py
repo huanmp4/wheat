@@ -158,27 +158,71 @@ def orderdelete(request):
 
 
 def order_filter(request):
+  token = get_token()
+  _query = query + token
   start = request.GET.get("start")
   end = request.GET.get("end")
   title = request.GET.get("title")
   print("start:",start)
   print("end:",end)
   print("title:",title)
-  order_data = models.orders.objects.all()
-  if start or end:
-    if start:
-      start = time.strptime(start, '%Y/%m/%d')
-    else:
-      start = datetime.datetime(year=2018, month=6, day=1)
-    if end:
-      end = time.strptime(end, '%Y/%m/%d')
-    else:
-      end = datetime.datetime.now()
-  # order_data = order_data.filter(creattime__gte=start, creattime__lte=end)
-  if title:
-    order_data = order_data.filter(Q(shop__contains=title) | Q(goodname__contains=title) | Q(goodid__contains=title) | Q(orderid__contains=title))
 
-  return render(request,"cms/order_list.html",{"orders":order_data})
+  # form_update = {
+  #   "env": env1,
+  #   "query": "db.collection(\"order\").where({creattime:_.and(_.gt(%s),_.tl(%s)),goodname:%s,shop:%s,orderid:%s}).get()" % (
+  #   start, end, title, title,title)
+  # }
+  form_update = {
+      "env": env1,
+      "query": "db.collection(\"order\").where({goodname:\"%s\"}).get()" % (title)
+  }
+  headers = {'content-type': "application/json"}
+  res2 = requests.post(_query, data=json.dumps(form_update), headers=headers)
+  data = eval(res2.text)["data"]
+  # data = eval(res2)
+  print("=" * 30)
+  print("orderdata:,", data)
+  print("=" * 30)
+  orders = []
+  for d in data:
+    d = dict(json.loads(d))
+    id = d["_id"]
+    d["id"] = id
+    d.pop("_id")
+
+    orders.append(d)
+  content = {
+    "orders": orders
+  }
+
+  # orders = models.orders.objects.all()
+  # content = {
+  #   "orders": orders
+  # }
+  return render(request, "cms/order_list.html", content)
+
+
+  # start = request.GET.get("start")
+  # end = request.GET.get("end")
+  # title = request.GET.get("title")
+  # print("start:",start)
+  # print("end:",end)
+  # print("title:",title)
+  # order_data = models.orders.objects.all()
+  # if start or end:
+  #   if start:
+  #     start = time.strptime(start, '%Y/%m/%d')
+  #   else:
+  #     start = datetime.datetime(year=2018, month=6, day=1)
+  #   if end:
+  #     end = time.strptime(end, '%Y/%m/%d')
+  #   else:
+  #     end = datetime.datetime.now()
+  # # order_data = order_data.filter(creattime__gte=start, creattime__lte=end)
+  # if title:
+  #   order_data = order_data.filter(Q(shop__contains=title) | Q(goodname__contains=title) | Q(goodid__contains=title) | Q(orderid__contains=title))
+  #
+  # return render(request,"cms/order_list.html",{"orders":order_data})
 
 def update_order(request):
   if request.method == "POST":
