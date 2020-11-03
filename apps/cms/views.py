@@ -19,21 +19,24 @@ url = 'https://api.weixin.qq.com/tcb/databasemigrateexport?access_token=ACCESS_T
 #我的
 appid = "wx5a6465866d81821c"
 secret = "525ebf1fd169c0690e366df865ac1d73"
-env = "bubble-zi95u"
+env_my = "camera-amblance120"
 
 #他们的
 appid1 = "wx4df25ad915c7b761"
 secret1 = "e2b34a530f0176206ca9bd6d45a28ca0"
-env1 = "first-1w1h4"
+env_them = "first-1w1h4"
 
+env1 = env_my
 delete_url = "https://api.weixin.qq.com/tcb/databasedelete?access_token="
 new = "https://api.weixin.qq.com/tcb/databasecollectionadd?access_token="
 add = "https://api.weixin.qq.com/tcb/databaseadd?access_token="
 update = "https://api.weixin.qq.com/tcb/databaseupdate?access_token="
 query = "https://api.weixin.qq.com/tcb/databasequery?access_token="
 
+
+
 def get_token():
-  get_token = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appid1 + "&secret=" + secret1
+  get_token = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appid + "&secret=" + secret
   res = requests.get(get_token)
   time.sleep(0.2)
   token = res.json()["access_token"]
@@ -60,14 +63,11 @@ def show_goods(request):
         id = d["_id"]
         d["id"] = id
         d.pop("_id")
-
         goods.append(d)
     content = {
         "goods":goods
     }
     return render(request,"cms/goods_list.html",content)
-
-
 
 def goodsEditer(request):
     token = get_token()
