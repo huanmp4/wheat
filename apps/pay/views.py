@@ -215,3 +215,4 @@ class Pay(APIView):
 
 def receive(request):
   print("成功")
+  return Response({"test":"test"})
