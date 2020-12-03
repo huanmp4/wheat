@@ -26,7 +26,7 @@ appid1 = "wx4df25ad915c7b761"
 secret1 = "e2b34a530f0176206ca9bd6d45a28ca0"
 env_them = "first-1w1h4"
 
-env1 = env_my
+env1 = env_them
 delete_url = "https://api.weixin.qq.com/tcb/databasedelete?access_token="
 new = "https://api.weixin.qq.com/tcb/databasecollectionadd?access_token="
 add = "https://api.weixin.qq.com/tcb/databaseadd?access_token="
@@ -36,7 +36,7 @@ query = "https://api.weixin.qq.com/tcb/databasequery?access_token="
 
 
 def get_token():
-  get_token = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appid + "&secret=" + secret
+  get_token = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appid1 + "&secret=" + secret1
   res = requests.get(get_token)
   time.sleep(0.2)
   token = res.json()["access_token"]
@@ -57,6 +57,7 @@ def show_goods(request):
     headers = {'content-type': "application/json"}
     res2 = requests.post(_query,data=json.dumps(form_update),headers = headers)
     data = eval(res2.text)["data"]
+    print("data:",data)
     goods = []
     for d in data:
         d = dict(json.loads(d))
